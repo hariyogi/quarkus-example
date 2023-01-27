@@ -1,0 +1,29 @@
+# Tiga profile yang terdaftar
+# dev = kalo kalian jalanan quarkus dari dev, maka profile ini yang dipakek
+# test = ini kalo kalian jalanin dari test unit
+# prod = ini kalo kalian jalanin dari /target/app-start/app-run.jar
+
+# kalian juga bisa buat custom profile.
+
+"%dev":
+  quarkus:
+    hibernate-orm:
+      log:
+        sql: true
+    flyway:
+      migrate-at-start: true
+    datasource:
+      db-kind: mysql
+      username: root
+      password:
+      jdbc:
+        url: jdbc:mysql://localhost:3306/test_2
+
+"%staging":
+  quarkus:
+    datasource:
+      db-kind: mysql
+      username: root
+      password:
+      jdbc:
+        url: jdbc:mysql://localhost:3306/perpus
